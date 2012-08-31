@@ -43,3 +43,13 @@ class TempMagic(Magics):
         self._temp_dirs.append(td)
         os.chdir(td.name)
         return td.name
+
+
+def load_ipython_extension(ip):
+    """Load the extension in IPython."""
+    global _loaded
+    if not _loaded:
+        ip.register_magics(TempMagic)
+        _loaded = True
+
+_loaded = False
