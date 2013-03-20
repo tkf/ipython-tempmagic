@@ -47,9 +47,9 @@ class TempMagic(Magics):
     @line_magic
     def cdtemp(self, parameter_s=''):
         """
-        Make temporal directory and change the current to there.
+        Make temporary directory and change the current to there.
 
-        The temporal directory made will be removed when the current
+        The temporary directory made will be removed when the current
         IPython process terminates.
 
         """
@@ -67,7 +67,7 @@ class TempMagic(Magics):
     @cell_magic
     def with_temp_dir(self, line, cell):
         """
-        Execute code in a temporal directory.
+        Execute code in a temporary directory.
         """
         args = parse_argstring(self.with_temp_dir, line)
         kwds = self._filter_none_values(vars(args))
