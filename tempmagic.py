@@ -37,7 +37,7 @@ class TempMagic(Magics):
     @staticmethod
     def _filter_none_values(*args, **kwds):
         return dict(
-            (k, v) for (k, v) in dict(*args, **kwds).iteritems()
+            (k, v) for (k, v) in dict(*args, **kwds).items()
             if v is not None)
 
     @magic_arguments()
